@@ -16,7 +16,7 @@ def chained_sort(main_list, *lists, reverse=False):
             temp.append(second_list[index])
         temp_list.append((item, temp))
     # Sorting new complex list by first position of each included tuple (actually sort main_list):
-    temp_list.sort(reverse=reverse)
+    temp_list.sort(key=lambda x: x[0], reverse=reverse)
     # All lists from *lists without main_list:
     second_list = [x[1] for x in temp_list]
     # Separate lists with the same sorting order as in main_list:
